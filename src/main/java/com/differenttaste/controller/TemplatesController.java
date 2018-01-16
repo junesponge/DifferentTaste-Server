@@ -7,12 +7,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class TemplatesController {
+public class TemplatesController extends ValidationController {
 
     // access index.html
     @RequestMapping(value = {"/index"}, method = RequestMethod.GET)
     public String index(HttpServletRequest request){
-        request.setAttribute("key", "hello world");
         return "/index";
+    }
+
+    // access main.html
+    @RequestMapping(value = {"/main"}, method = RequestMethod.GET)
+    public String main(HttpServletRequest request){
+        if(validateLogin()) {
+            return "/main";
+        } else {
+            return "/index";
+        }
     }
 }

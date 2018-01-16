@@ -1,22 +1,22 @@
 package com.differenttaste.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Controller
+@Component
 abstract public class ValidationController {
 
     @Autowired
     protected HttpServletRequest request;
 
-    public String validateLogin(){
+    public boolean validateLogin(){
         String logged = (String) request.getSession().getAttribute("logged");
         if(null != logged) {
-            return logged;
+            return true;
         } else {
-            return "/index";
+            return false;
         }
     }
 

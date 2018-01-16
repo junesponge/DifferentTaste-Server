@@ -8,7 +8,9 @@
 <div id="user">
     <input v-model="user.name" placeholder="name" />
     <input v-model="user.password" placeholder="password" type="password" />
-    <p>{{ message }}</p>
+    <br />
+    <label style="color: #c31e3a;">{{ message }}</label>
+    <br />
     <button v-on:click="submit">Login</button>
 </div>
 </body>
@@ -31,11 +33,14 @@
                 axios.post(basePath + '/login', Qs.stringify(this.user)).then(function (response) {
                     console.log(response);
                     if(response.data == false) {
-                        this.message = 'Login fail.';
+                        user.message = 'Login fail.';
+                    } else {
+                        user.message = 'Logging...';
+
                     }
                 }).catch(function (error) {
                     console.log(error);
-                    this.message = 'Could not reach server, please contact admin.';
+                    user.message = 'Could not reach server, please contact admin.';
                 });
             }
         }
