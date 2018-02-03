@@ -3,21 +3,23 @@ package com.differenttaste.bean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
-public class Good {
+public class Cake {
 
     @Id
     @GeneratedValue
     private int id;
     private String name;
     private String type;
-    private double price;
-    private double pounds;
+    private String prices;
+    private String pounds;
     private int count;
-    private int sell;
     private double discount;
-    private String imagePath;
+    private String imagesPath;
+    private Date changeTime;
+    private String changeStatus;
 
     public int getId() {
         return id;
@@ -43,19 +45,19 @@ public class Good {
         this.type = type;
     }
 
-    public double getPrice() {
-        return price;
+    public String getPrices() {
+        return prices;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrices(String prices) {
+        this.prices = prices;
     }
 
-    public double getPounds() {
+    public String getPounds() {
         return pounds;
     }
 
-    public void setPounds(double pounds) {
+    public void setPounds(String pounds) {
         this.pounds = pounds;
     }
 
@@ -67,14 +69,6 @@ public class Good {
         this.count = count;
     }
 
-    public int getSell() {
-        return sell;
-    }
-
-    public void setSell(int sell) {
-        this.sell = sell;
-    }
-
     public double getDiscount() {
         return discount;
     }
@@ -83,11 +77,27 @@ public class Good {
         this.discount = discount;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getImagesPath() {
+        return imagesPath;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setImagesPath(String imagesPath) {
+        this.imagesPath = imagesPath;
+    }
+
+    public Date getChangeTime() {
+        return changeTime;
+    }
+
+    public void setChangeTime(Date changeTime) {
+        this.changeTime = changeTime;
+    }
+
+    public String getChangeStatus() {
+        return changeStatus;
+    }
+
+    public void setChangeStatus(String changeStatus) {
+        this.changeStatus = changeStatus;
     }
 }
