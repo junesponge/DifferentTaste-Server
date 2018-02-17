@@ -4,15 +4,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
-public class CakeSell {
+public class DrinkSale {
 
     @Id
     @GeneratedValue
     private int id;
     private int cakeId;
-    private double pound;
     private int count;
     private double price;
+    private String size;
+    private String hotType;
     private double discount;
     private Date changeTime;
     private String changeStatus;
@@ -33,14 +34,6 @@ public class CakeSell {
         this.cakeId = cakeId;
     }
 
-    public double getPound() {
-        return pound;
-    }
-
-    public void setPound(double pound) {
-        this.pound = pound;
-    }
-
     public int getCount() {
         return count;
     }
@@ -55,6 +48,22 @@ public class CakeSell {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getHotType() {
+        return hotType;
+    }
+
+    public void setHotType(String hotType) {
+        this.hotType = hotType;
     }
 
     public double getDiscount() {

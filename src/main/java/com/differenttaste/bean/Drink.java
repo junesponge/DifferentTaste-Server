@@ -16,7 +16,8 @@ public class Drink {
     private String hotTypes;
     private int count;
     private double discount;
-    private String imagesPath;
+    private String imagesName;
+    private boolean isOnsale;
     private Date changeTime;
     private String changeStatus;
 
@@ -84,12 +85,20 @@ public class Drink {
         this.discount = discount;
     }
 
-    public String getImagesPath() {
-        return imagesPath;
+    public String getImagesName() {
+        return imagesName;
     }
 
-    public void setImagesPath(String imagesPath) {
-        this.imagesPath = imagesPath;
+    public void setImagesName(String imagesName) {
+        this.imagesName = imagesName;
+    }
+
+    public boolean isOnsale() {
+        return isOnsale;
+    }
+
+    public void setOnsale(boolean onsale) {
+        isOnsale = onsale;
     }
 
     public Date getChangeTime() {
